@@ -37,6 +37,10 @@ jobs:
           
   test-instrument:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        api-level: [28, 29, 30]
+        arch: [x86, x86_64]
     steps:
       - uses: actions/checkout@v3
       - name: set up JDK 11
@@ -53,7 +57,8 @@ jobs:
       - name: run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: ${{ matrix.api-level }}
+          arch: ${{ matrix.arch }}
           script: ./gradlew connectedCheck
 
       - name: Android Test Report
