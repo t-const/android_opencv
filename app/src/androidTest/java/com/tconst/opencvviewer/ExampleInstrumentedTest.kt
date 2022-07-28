@@ -1,4 +1,4 @@
-package com.swarmus.opencvviewer
+package com.tconst.opencvviewer
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

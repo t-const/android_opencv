@@ -1,4 +1,4 @@
-package com.swarmus.opencvviewer
+package com.tconst.opencvviewer
 
 import org.junit.Test
 
