@@ -8,7 +8,7 @@ on:
 
 jobs:
   test-unit:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: set up JDK 11
@@ -36,7 +36,7 @@ jobs:
           files: "**/test-results/**/*.xml"
           
   test-instrument:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         api-level: [28, 29, 30]
