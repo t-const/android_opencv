@@ -40,7 +40,6 @@ jobs:
     strategy:
       matrix:
         api-level: [23, 32]
-        target: [x86_64]
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -69,6 +68,7 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
+          arch: x86_64
           force-avd-creation: false
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: false
